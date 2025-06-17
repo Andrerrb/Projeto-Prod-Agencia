@@ -1,0 +1,80 @@
+<!-- Projeto: Vídeo interativo
+ Autor: André Ribeiro Rodrigues Batista
+ Descrição: Página com tela inicial, reprodução de vídeos e perguntas interativas.
+ Estrutura:
+    - <!DOCTYOE html => Define o tipo de documento como HTML5
+    - <html lang="pt-BR"> => Define o idioma da página como português do Brasil
+    -  <head> => Contém informações e configurações (meta, título, CSS)
+    - <body> => Contém o conteúdo visível da página (telas, botões, vídeo)
+ Data: 16/06/2025
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo Interativo - Prod</title>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+<!--Tela inicial -->
+    <div class="container">
+        <!-- Primeira tela: Apresentação -->
+         <h1> Vídeo Interativo</h1>
+         <h2> Apresentação Layout</h2>
+            <div id="tela1" class="tela ativa">
+               <p>Prod <br> Agência Digital</p>
+             <button id="iniciarBtn">INICIAR</button>
+    </div>
+
+<!-- Tela de Vídeo -->
+    <div id="tela2" class="tela">
+        <video id="interactiveVideo" controls muted playsinline>
+            <source src="Prod-Vídeo-Exemplo-Interação.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <div class="video-controls">
+            <button id="fullscreenBtn" class="btn-dark"> Clique aqui para assistir em tela cheia</button>
+            <button id="homeBtn" class="btn-dark">
+                <i class="material-icons">home</i>
+                    </button>
+            <button id="voltarBtn" class="btn-dark">Voltar</button>
+            <button id="avancarBtn" class="btn-dark"> Avançar</button>
+        </div>
+    </div>
+
+<!-- Tela de Perguntas -->
+ <div id="tela3" class="tela">
+    <h2>Qual é a agência que transforma ideias em soluções digitais?</h2>
+      <div class="opcoes-resposta">
+    <button class="opcao" data-correta="false">A. Prod</button>
+    <button class="opcao" data-correta="false">B. Prod.ag</button>
+    <button class="opcao" data-correta="false">C. Agência prod</button>
+    <button class="opcao" data-correta="true">D. Todas as alternativas</button>
+    </div>
+    <!-- Botão de quando o usuário seleciona a opção incorreta -->
+     <button id="voltarVideoBtn" class="botao-voltar" style="display: none;">
+        <i class="material-icons">replay</i> Voltar ao vídeo
+     </button>
+ </div>
+ 
+<!-- Tela de Resposta -->
+<div id="tela4" class="tela">
+    <h2>Qual é a agência que transforma ideias em soluções digitais?</h2>
+    <h3>Resposta correta:</h3>
+    <div class="resposta-correta">
+        <input type="checkbox" id="respostaCorreta" disabled>
+        <label for="respostaCorreta">D. Todas as alternativas</label>
+     </div>
+    <button id="finalizarBtn">Finalizar</button>
+  </div>
+</div>
+
+    <script src="script.js"></script>
+ </body>
+ </html>
+    
